@@ -1,0 +1,23 @@
+.boton-hover {
+background: rgba(255, 255, 255, 0) !important;
+}
+
+
+.banner__container--size {
+    height: 60vh;
+}
+
+#banner>div>img {
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+
+}
+
+.footer-color{
+    background: #1d4358;
+}
+
+#oradores img {
+    height: 40vh;
+}

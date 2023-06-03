@@ -1,7 +1,7 @@
 const headerTemplate = `<nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow">
 <div class="container-fluid">
     <a class="navbar-brand" href="#">
-        <img src="/assets/images/codoacodo.png" width="75" alt="logo codo a codo">
+        <img src="./assets/images/codoacodo.png" width="75" alt="logo codo a codo">
     </a>
     <a class="navbar-brand" href="#"> Conf Bs As
     </a>

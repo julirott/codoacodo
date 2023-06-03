@@ -28,7 +28,7 @@ const headerTemplate = `<nav class="navbar navbar-expand-lg bg-dark navbar-dark 
                 <a class="nav-link" href="#conviertete">Conviértete en orador</a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link text-success" href="/assets/tickets.html">Comprar tickets</a>
+                <a class="nav-link text-success" href="./tickets.html">Comprar tickets</a>
             </li>
 
 

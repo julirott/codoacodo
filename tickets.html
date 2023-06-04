@@ -15,37 +15,108 @@
     <header></header>
 
     <main>
-        <div class="card-group">
-            <div class="btn card border border-2 card__align--center">
 
-                <div class="card-body">
-                    <h5 class="card-title">Estudiante</h5>
-                    <p class="card-text">Tienen un descuento</p>
-                    <h5>80%</h5>
-                    <p class="card-text"><small class="text-body-secondary">* presentar documentación</small></p>
+        <section id=cards>
+            <div class="card-group m-5 gap-3">
+
+                <div class="btn card border border-2 bg-transparent card__align--center" data-index="0">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Estudiante</h5>
+                        <p class="card-text">Tienen un descuento</p>
+                        <h5>80%</h5>
+                        <p class="card-text"><small class="text-body-secondary">* presentar documentación</small></p>
+                    </div>
                 </div>
+
+                <div class="btn card border border-2 bg-transparent card__align--center" data-index="1">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Trainee</h5>
+                        <p class="card-text">Tienen un descuento</p>
+                        <h5>50%</h5>
+                        <p class="card-text"><small class="text-body-secondary">* presentar documentación</small></p>
+                    </div>
+                </div>
+
+                <div class="btn card border border-2 bg-transparent card__align--center" data-index="2">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Junior</h5>
+                        <p class="card-text">Tienen un descuento</p>
+                        <h5>15%</h5>
+                        <p class="card-text"><small class="text-body-secondary">* presentar documentación</small></p>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="btn card card__align--center">
+        </section>
 
-                <div class="card-body">
-                    <h5 class="card-title">Trainee</h5>
-                    <p class="card-text">Tienen un descuento</p>
-                    <h5>50%</h5>
-                    <p class="card-text"><small class="text-body-secondary">* presentar documentación</small></p>
-                </div>
+        <section id=" info">
+            <div>
+                <div class="text-center fs-6 text-uppercase"> VENTA </div>
+                <div class="text-center fs-1 text-uppercase">VALOR DEL TICKET <b>$200</b></div>
             </div>
+        
 
-            <div class="btn card card__align--center">
+        </section>
 
-                <div class="card-body">
-                    <h5 class="card-title">Junior</h5>
-                    <p class="card-text">Tienen un descuento</p>
-                    <h5>15%</h5>
-                    <p class="card-text"><small class="text-body-secondary">* presentar documentación</small></p>
+        <section id=" formulario">
+
+
+            <!-- form -->
+
+            <form action="" name="formulario" class='container bg-white bg-opacity-75 p-4 rounded'>
+
+                <div class="input-group gap-3 my-3">
+                    <input type="text" class="form-control" placeholder="Nombre" name="nombre">
+                    <input type="text" class="form-control" placeholder="Apellido" name="apellido">
+
                 </div>
-            </div>
-        </div>
+
+
+
+                <input type="email" class="form-control" placeholder="Correo" name="correo">
+
+
+                <div class="row my-3">
+
+                    <div class="col-6">
+                        <label for="cant">Cantidad</label>
+                        <input id="cant" type="number" class="form-control" placeholder="cantidad" name="cant">
+                    </div>
+
+                    <div class="col-6">
+                        <label for="categ">Categoria</label>
+                        <select name="categoria" id="categ" class="form-select" aria-label="Default select">
+                            <option selected="" value="none">Seleccione una categoría</option>
+                            <option value="a">Estudiante</option>
+                            <option value="b">Trainee</option>
+                            <option value="c">Junior</option>
+                        </select>
+
+                    </div>
+
+
+
+                </div>
+
+                <div id="total" class="bg-primary bg-opacity-25 rounded-1 p-2 my-4"> </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <button id="borrar" class="btn btn-success w-100 "> Borrar</button>
+
+                    </div>
+                    <div class="col-6">
+                        <button id="resumen" class="btn btn-success w-100 "> Resumen</button>
+                    </div>
+
+                </div>
+
+            </form>
+        </section>
 
     </main>
 
@@ -58,6 +129,8 @@
     </script>
 
     <script src="./js/headerfooter.js"></script>
+    <script src="./js/cards.js"></script>
+    <script src="./js/formulario.js"></script>
 </body>
 
 </html>

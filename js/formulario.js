@@ -1,16 +1,16 @@
 // VARIABLES
 
-const precio = 200
+const price = 200
 
-const categorias = {
-    a: {porcentaje: 80, value: 0},
-    b: {porcentaje: 50, value: 1},
-    c: {porcentaje: 15, value: 2}
+const categorys = {
+    a: {perc: 80, value: 0},
+    b: {perc: 50, value: 1},
+    c: {perc: 15, value: 2}
 }
 
 const totalText = 'Total a Pagar: $ '
 
-let categoria = null
+let category = null
 let tickets = null
 let total = null
 
@@ -23,8 +23,8 @@ const select = form.getElementsByTagName('select')[0]
 
 const totalTag = document.getElementById('total')
 
-const borrarBtn = document.getElementById('borrar')
-const resumenBtn = document.getElementById('resumen')
+const cleanBtn = document.getElementById('clean')
+const summaryBtn = document.getElementById('summary')
 
 totalTag.innerText = totalText
 
@@ -32,12 +32,12 @@ totalTag.innerText = totalText
 
 const totalPrice = () => {
 
-    if (!cant || !categoria || isNaN (cant)) return;
+    if (!cant || !category || isNaN (cant)) return;
 
-    const totalValue = precio * cant
-    const descuento = (totalValue / 100) * categorias[categoria].porcentaje
+    const totalValue = price * cant
+    const discount = (totalValue / 100) * categorys[category].perc
    
-    total = totalValue - descuento
+    total = totalValue - discount
    
     totalTag.innerText = totalText + total
 
@@ -45,36 +45,38 @@ const totalPrice = () => {
 
 //EVENTOS
 
-const resetCategoria = () => {
+const resetCategory = () => {
     total = null
-    descuento = null
+    discount = null
     eventsAll()
     totalTag.innerText = totalText
 }
 
-const setCategoria = (e) => {
+const setCategory = (e) => {
 
     const option = e.target.value
     
     if (option === 'none'){
-        resetCategoria()
+        resetCategory()
         return
     }
 
     
 
-    categoria = option
-    const index = categorias[categoria].value
+    category = option
+    const index = categorys[category].value
 
     const container = cardsContainer[index]
 
     
-    descuento = index
+    discount = index
 
 
     eventsAll()
    
-    cambiarColor (container,index, false)
+    changeColor (container,index, false)
+
+
 
     totalPrice()
 
@@ -90,8 +92,7 @@ const setCant = (e) => {
         total = null
         return
     }
-
-
+    
     cant = value
     
     totalPrice()
@@ -101,7 +102,7 @@ const setCant = (e) => {
 
 // BOTONES
 
-const limpiar = (e) => {
+const clean = (e) => {
 
     e.preventDefault()
 
@@ -110,7 +111,7 @@ const limpiar = (e) => {
     input.value = ''
     select.value = 'none'
 
-    resetCategoria()
+    resetCategory()
 
 
 }
@@ -118,21 +119,21 @@ const limpiar = (e) => {
 const submit = (e) => {
     e.preventDefault()
     
-    const {nombre,apellido,correo, cant,categoria} = form
+    const {nombre,apellido,correo, cant,category} = form
 
     const verify = {
         nombre: nombre.value !== '',
         apellido: apellido.value !== '',
         correo: correo.value.includes('@') ,
         cant: cant.value > 0,
-        categoria: categoria.value !== 'none'
+        category: category.value !== 'none'
     }
 
     const values = Object.values(verify)
 
-    const submitAceptado = values.every(value => value)
+    const submitAcept = values.every(value => value)
 
-    if (submitAceptado){
+    if (submitAcept){
         alert ('COMPRA EXITOSA!')
         location.href = './index.html'
     } else{
@@ -154,11 +155,10 @@ const submit = (e) => {
 }
 
 
-
-
-form.categoria.addEventListener('change',setCategoria)
+form.category.addEventListener('change',setCategory)
 form.cant.addEventListener('keyup',setCant)
+form.cant.addEventListener('change',setCant)
 
 form.addEventListener('submit', submit)
 
-borrarBtn.addEventListener('click',limpiar)
+cleanBtn.addEventListener('click',clean)

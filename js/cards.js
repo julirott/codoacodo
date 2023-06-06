@@ -1,6 +1,6 @@
 //VARIABLES
 
-let descuento = null
+let discount = null
 
 //DOM
 
@@ -10,7 +10,7 @@ const cardsContainer = document.getElementsByClassName('btn card')
 const colors = ['bg-primary','bg-danger','bg-success']
 const transparent = 'bg-transparent'
 
-const cambiarColor = (container,index,revert) => {
+const changeColor = (container,index,revert) => {
 
    
     const i = Number(index)
@@ -24,20 +24,20 @@ const matchCategory = (selection) => {
 
     switch (selection){
         case "0" : 
-           form.categoria.value = 'a'
-           categoria = 'a'
+           form.category.value = 'a'
+           category = 'a'
           
             break
         case "1" : 
-            form.categoria.value = 'b'
-            categoria = 'b'
+            form.category.value = 'b'
+            category = 'b'
              break        
         case "2" : 
-            form.categoria.value = 'c'
-            categoria = 'c'
+            form.category.value = 'c'
+            category = 'c'
              break    
         default:
-            form.categoria.value = none     
+            form.category.value = none     
     } 
 
 
@@ -50,20 +50,20 @@ const cardEnter = (e) => {
     const {index} = e.target.dataset
     
     
-    cambiarColor(e.target,index, false)
+    changeColor(e.target,index, false)
 
       
 }
 
 const cardLeave = (e) => {  
     const {index} = e.target.dataset
-    cambiarColor(e.target,index,true)
+    changeColor(e.target,index,true)
       
 }
 const cardClick = (e) => {
-    descuento = e.currentTarget.dataset.index
+    discount = e.currentTarget.dataset.index
     
-    matchCategory(descuento)
+    matchCategory(discount)
 
     eventsAll()
     totalPrice()
@@ -93,9 +93,9 @@ const eventsAll = () => {
 
         const {index} = container.dataset
     
-        if (index !== descuento) {
+        if (index !== discount) {
             eventosCard(container)
-            cambiarColor(container,index,true)
+            changeColor(container,index,true)
         }
         
       
